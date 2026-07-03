@@ -89,7 +89,7 @@ export default function Home() {
               <h1 className="mt-5 !text-ivory text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
                 Making all wood
                 <br />
-                look good again
+                look new again
               </h1>
             </Reveal>
             <Reveal delay={0.16}>

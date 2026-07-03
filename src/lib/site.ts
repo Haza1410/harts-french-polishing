@@ -5,7 +5,7 @@
 export const site = {
   name: "Harts French Polishing",
   shortName: "Harts",
-  tagline: "Making all wood look good again",
+  tagline: "Making all wood look new again",
   intro:
     "Traditional French polishing and fine wood restoration in Hertford. We clean, revive, strip, repolish and colour-match timber of every kind — bringing tired furniture, staircases and bars back to their very best.",
   phone: "07999 590352",
