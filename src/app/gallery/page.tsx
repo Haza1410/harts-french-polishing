@@ -68,8 +68,8 @@ export default function GalleryPage() {
         <div className="mt-20 grid items-center gap-14 lg:grid-cols-2">
           <div className="order-2 lg:order-2">
             <BeforeAfter
-              beforeImage="/images/real/before2.webp"
-              image="/images/real/after2.webp"
+              beforeImage="/images/real/after2.webp"
+              image="/images/real/before2.webp"
               alt="Wood restoration"
               beforeScale={1}
               beforeX={0}
