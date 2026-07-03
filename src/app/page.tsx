@@ -8,6 +8,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 import { services, site } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 const stats = [
   { value: "25+", label: "Years of craft" },
@@ -67,7 +68,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex min-h-[92vh] items-center">
         <Image
-          src="/images/hero-table.png"
+          src={asset("/images/hero-table.png")}
           alt="A beautifully French-polished antique dining table"
           fill
           priority
@@ -138,7 +139,7 @@ export default function Home() {
           <Reveal className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
               <Image
-                src="/images/craftsman.png"
+                src={asset("/images/craftsman.png")}
                 alt="A craftsman French polishing wood by hand"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

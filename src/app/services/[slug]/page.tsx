@@ -8,6 +8,7 @@ import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
 import CtaBanner from "@/components/CtaBanner";
 import { getService, services, site } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -64,7 +65,7 @@ export default async function ServiceDetailPage({
             <Reveal>
               <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
                 <Image
-                  src={service.image}
+                  src={asset(service.image)}
                   alt={service.title}
                   fill
                   priority

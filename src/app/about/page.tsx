@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 import CtaBanner from "@/components/CtaBanner";
 import { site } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "About",
@@ -47,7 +48,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
               <Image
-                src="/images/workshop.png"
+                src={asset("/images/workshop.png")}
                 alt="The Harts French Polishing workshop bench"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

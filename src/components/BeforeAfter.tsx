@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
+import { asset } from "@/lib/asset";
 
 type BeforeAfterProps = {
   image: string;
@@ -19,6 +20,7 @@ export default function BeforeAfter({
   alt,
   className = "",
 }: BeforeAfterProps) {
+  const src = asset(image);
   const [pos, setPos] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -62,7 +64,7 @@ export default function BeforeAfter({
     >
       {/* After (restored) — full image underneath */}
       <Image
-        src={image}
+        src={src}
         alt={`${alt} — after restoration`}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
@@ -78,7 +80,7 @@ export default function BeforeAfter({
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <Image
-          src={image}
+          src={src}
           alt={`${alt} — before restoration`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"

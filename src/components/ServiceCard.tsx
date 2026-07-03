@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Service } from "@/lib/site";
+import { asset } from "@/lib/asset";
 import Icon from "./Icon";
 
 export default function ServiceCard({ service }: { service: Service }) {
@@ -11,7 +12,7 @@ export default function ServiceCard({ service }: { service: Service }) {
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
-          src={service.image}
+          src={asset(service.image)}
           alt={service.title}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"

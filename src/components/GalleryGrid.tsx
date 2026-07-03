@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import type { Project } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export default function GalleryGrid({ projects }: { projects: Project[] }) {
   const categories = useMemo(
@@ -50,7 +51,7 @@ export default function GalleryGrid({ projects }: { projects: Project[] }) {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src={project.image}
+                  src={asset(project.image)}
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
