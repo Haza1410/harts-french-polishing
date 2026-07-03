@@ -26,26 +26,70 @@ export default function GalleryPage() {
 
       {/* Featured before/after */}
       <section className="container-page py-20 lg:py-28">
+        <SectionHeading
+          align="center"
+          eyebrow="Before & after"
+          title="The Harts difference"
+          intro="Drag the sliders to see the transformation. Every project is different — but the goal is always the same: to reveal the natural beauty of the timber and protect it for years to come."
+          className="mb-14"
+        />
+
+        {/* First before/after - Door restoration */}
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
-            <SectionHeading
-              eyebrow="Before & after"
-              title="The Harts difference"
-              intro="This dining table arrived tired, dull and marked. After a careful strip, colour balance and hand French polish, it was returned with a deep, mirror-like finish."
+            <BeforeAfter
+              beforeImage="/images/real/before.webp"
+              image="/images/real/after.webp"
+              alt="Front door restoration"
+              beforeScale={1}
+              beforeX={0}
+              beforeY={0}
+              afterScale={1.2}
+              afterX={0}
+              afterY={60}
             />
-            <Reveal delay={0.1}>
-              <p className="mt-5 leading-relaxed text-muted">
-                Every project is different — but the goal is always the same:
-                to reveal the natural beauty of the timber and protect it for
-                years to come.
+          </div>
+          <div className="order-1 lg:order-2">
+            <Reveal>
+              <h3 className="font-serif text-2xl font-semibold text-espresso">
+                Front door restoration
+              </h3>
+              <p className="mt-4 leading-relaxed text-muted">
+                This oak front door had become faded and weathered over the
+                years. After stripping back the old finish, colour balancing
+                and applying a protective French polish, it was restored to
+                its original warmth and character.
               </p>
             </Reveal>
           </div>
-          <div className="order-1 lg:order-2">
+        </div>
+
+        {/* Second before/after */}
+        <div className="mt-20 grid items-center gap-14 lg:grid-cols-2">
+          <div className="order-2 lg:order-2">
             <BeforeAfter
-              image="/images/hero-table.png"
-              alt="Mahogany dining table restoration"
+              beforeImage="/images/real/before2.webp"
+              image="/images/real/after2.webp"
+              alt="Wood restoration"
+              beforeScale={1}
+              beforeX={0}
+              beforeY={0}
+              afterScale={1}
+              afterX={0}
+              afterY={0}
             />
+          </div>
+          <div className="order-1 lg:order-1">
+            <Reveal>
+              <h3 className="font-serif text-2xl font-semibold text-espresso">
+                Fine furniture restoration
+              </h3>
+              <p className="mt-4 leading-relaxed text-muted">
+                Tired, dull and marked surfaces are carefully stripped,
+                colour-matched and hand-polished to bring back their deep,
+                mirror-like finish. The result speaks for itself.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>

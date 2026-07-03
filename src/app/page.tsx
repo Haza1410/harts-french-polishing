@@ -241,6 +241,17 @@ export default function Home() {
               beforeImage="/images/real/before.webp"
               image="/images/real/after.webp"
               alt="Table restoration"
+              // ═══════════════════════════════════════════════════════
+              // BEFORE image (the faded door) - keep at 1, shift to align
+              beforeScale={1.00}
+              beforeX={0}
+              beforeY={0}
+              // ═══════════════════════════════════════════════════════
+              // AFTER image (the polished door) - zoom IN to match before's framing
+              afterScale={1.2}
+              afterX={0}
+              afterY={60}
+              // ═══════════════════════════════════════════════════════
             />
           </div>
           <div className="order-1 lg:order-2">
