@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Harts French Polishing — Website
 
-## Getting Started
+A high-quality marketing website for **Harts French Polishing**, a traditional
+French polishing and wood restoration business in Hertford, Hertfordshire.
 
-First, run the development server:
+Built with **Next.js (App Router) + TypeScript + Tailwind CSS v4** and
+**Framer Motion** for tasteful animation. Designed as a durable foundation to
+grow, not a throwaway demo.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # lint
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/                 # Routes (App Router)
+    page.tsx           # Home
+    services/          # Services overview + [slug] detail pages
+    gallery/           # Before/after gallery
+    about/             # About
+    contact/           # Contact (form + map + hours)
+    layout.tsx         # Root layout, fonts, header/footer, SEO + JSON-LD
+    sitemap.ts         # Auto-generated sitemap
+    robots.ts          # robots.txt
+    icon.svg           # Favicon
+  components/           # Reusable UI (Header, Footer, ServiceCard, BeforeAfter, etc.)
+  lib/
+    site.ts            # ← ALL content + business data lives here
+public/
+  images/              # Placeholder imagery (swap for the client's real photos)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editing content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Almost everything the client will want to change lives in **`src/lib/site.ts`**:
 
-## Deploy on Vercel
+- Business name, phone, email, address, opening hours
+- Service areas
+- The full list of **services** (title, copy, "what's included", image)
+- Testimonials
+- Gallery projects
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Update that one file and every page reflects the change.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Things to confirm / swap before go-live
+
+These are placeholders for the demo — replace with the client's real details:
+
+- **Photos & logo** — images in `public/images/` are AI-generated placeholders.
+  Drop in the client's real project photos (and a real logo in `Logo.tsx`).
+- **Before/after slider** — currently shows the same photo dulled for the
+  "before" state. Swap in real before/after pairs.
+- **Opening hours & email** — confirm exact values in `site.ts`.
+- **Contact form** — currently shows a success state without sending. Wire it to
+  an email service (e.g. Resend, Formspree, or a serverless route) before launch.
+- **Domain** — metadata/sitemap use `hartsfrenchpolishing.co.uk`; update if the
+  domain differs.
+- **Social links & Google Maps** — update the placeholder links in `site.ts`.
+
+## Deployment
+
+Optimised for [Vercel](https://vercel.com/new). Connect the repo and deploy —
+no configuration required.
