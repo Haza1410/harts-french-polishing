@@ -104,10 +104,6 @@ export default function GalleryPage() {
             className="mb-14"
           />
           <GalleryGrid projects={projects} />
-          <p className="mt-12 text-center text-sm text-muted">
-            These are placeholder examples for the demo &mdash; we&rsquo;ll
-            showcase your real projects here.
-          </p>
         </div>
       </section>
 

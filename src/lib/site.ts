@@ -299,49 +299,55 @@ export type Project = {
   description: string;
 };
 
-// Placeholder gallery items — swap the images for the client's real
-// before/after project photography.
+// Gallery items showcasing real project photography.
 export const projects: Project[] = [
   {
-    title: "Mahogany Dining Table",
+    title: "Armchair Frame Polishing",
     category: "French Polishing",
-    image: "/images/hero-table.png",
+    image: "/images/real/gallery-1.webp",
     description:
-      "A full strip and hand French polish, removing years of water marks and dull patches to reveal a deep, mirror-like finish.",
+      "The show-wood arms and frame of this upholstered armchair were cleaned and hand-polished to bring back a warm, even sheen.",
   },
   {
-    title: "Bow-Front Sideboard",
+    title: "Teak Garden Set Revival",
+    category: "Cleaning & Reviving",
+    image: "/images/real/gallery-2.webp",
+    description:
+      "A weathered outdoor teak table and chairs cleaned back and revived, restoring warmth and protection to the timber.",
+  },
+  {
+    title: "Mahogany Tripod Table",
     category: "Antique Restoration",
-    image: "/images/furniture.png",
+    image: "/images/real/gallery-3.webp",
     description:
-      "Veneer repairs, re-gluing and a sympathetic repolish, retaining the original patina and character of the piece.",
+      "A tilt-top pedestal table sympathetically repaired and repolished to a deep, mellow shine that honours its age.",
   },
   {
-    title: "Victorian Staircase",
-    category: "Staircase Restoration",
-    image: "/images/staircase.png",
-    description:
-      "On-site restoration of the handrail, spindles and newel posts, recoloured and polished to a hardwearing finish.",
-  },
-  {
-    title: "Traditional Bar Top",
-    category: "Commercial",
-    image: "/images/commercial-bar.png",
-    description:
-      "A hardwearing repolish of a busy pub bar top, completed out of hours to avoid any disruption to trade.",
-  },
-  {
-    title: "Workshop Craftsmanship",
+    title: "Staircase Handrail Restoration",
     category: "French Polishing",
-    image: "/images/craftsman.png",
+    image: "/images/real/gallery-4.webp",
     description:
-      "Every finish is built up by hand, one fine coat at a time — the detail that sets a true French polish apart.",
+      "A sweeping mahogany handrail stripped, colour-matched and hand-polished to a rich, hard-wearing finish.",
   },
   {
-    title: "Bespoke Colour Match",
-    category: "Colour Matching",
-    image: "/images/workshop.png",
+    title: "Hardwood Floor Revival",
+    category: "Cleaning & Reviving",
+    image: "/images/real/gallery-5.webp",
     description:
-      "Stains and pigments mixed by eye to blend a replacement section seamlessly into the original timber.",
+      "Tired, dull floorboards cleaned and revived to reveal the natural grain and warmth of the timber.",
+  },
+  {
+    title: "Dining Table Repolishing",
+    category: "French Polishing",
+    image: "/images/real/gallery-6.webp",
+    description:
+      "A mahogany dining table and chairs stripped and hand-polished to a deep, mirror-like lustre for years of family use.",
+  },
+  {
+    title: "Handrail & Balustrade",
+    category: "French Polishing",
+    image: "/images/real/gallery-7.webp",
+    description:
+      "A polished mahogany handrail set against freshly stripped spindles — hand-finished coat by coat for a lasting shine.",
   },
 ];
