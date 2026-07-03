@@ -238,8 +238,9 @@ export default function Home() {
         <div className="container-page grid items-center gap-14 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
             <BeforeAfter
-              image="/images/furniture.png"
-              alt="Antique sideboard restoration"
+              beforeImage="/images/real/before.webp"
+              image="/images/real/after.webp"
+              alt="Table restoration"
             />
           </div>
           <div className="order-1 lg:order-2">

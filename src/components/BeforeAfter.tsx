@@ -5,22 +5,27 @@ import { useCallback, useRef, useState } from "react";
 import { asset } from "@/lib/asset";
 
 type BeforeAfterProps = {
+  /** After (restored) image */
   image: string;
+  /** Before image — when omitted, the after image is shown dulled as a demo fallback */
+  beforeImage?: string;
   alt: string;
   className?: string;
 };
 
 /**
- * Interactive before/after slider. For the demo the "before" state is the
- * same photograph shown dulled and desaturated (guaranteeing perfect
- * alignment). Swap `beforeImage` in for the client's real "before" photos.
+ * Interactive before/after slider. Pass `beforeImage` for a real before/after
+ * pair; otherwise the after image is duplicated with a dull filter for demo use.
  */
 export default function BeforeAfter({
   image,
+  beforeImage,
   alt,
   className = "",
 }: BeforeAfterProps) {
-  const src = asset(image);
+  const afterSrc = asset(image);
+  const beforeSrc = beforeImage ? asset(beforeImage) : afterSrc;
+  const useRealBefore = Boolean(beforeImage);
   const [pos, setPos] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -56,7 +61,9 @@ export default function BeforeAfter({
   return (
     <div
       ref={containerRef}
-      className={`relative aspect-[4/3] w-full touch-none select-none overflow-hidden rounded-2xl ring-1 ring-espresso/10 ${className}`}
+      className={`relative w-full touch-none select-none overflow-hidden rounded-2xl ring-1 ring-espresso/10 ${
+        useRealBefore ? "aspect-[3/4]" : "aspect-[4/3]"
+      } ${className}`}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
@@ -64,7 +71,7 @@ export default function BeforeAfter({
     >
       {/* After (restored) — full image underneath */}
       <Image
-        src={src}
+        src={afterSrc}
         alt={`${alt} — after restoration`}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
@@ -80,11 +87,15 @@ export default function BeforeAfter({
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <Image
-          src={src}
+          src={beforeSrc}
           alt={`${alt} — before restoration`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover [filter:grayscale(0.65)_brightness(0.62)_contrast(0.9)_sepia(0.25)]"
+          className={`object-cover ${
+            useRealBefore
+              ? ""
+              : "[filter:grayscale(0.65)_brightness(0.62)_contrast(0.9)_sepia(0.25)]"
+          }`}
         />
         <span className="pointer-events-none absolute bottom-4 left-4 rounded-full bg-espresso/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ivory">
           Before
